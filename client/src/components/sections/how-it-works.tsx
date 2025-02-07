@@ -47,12 +47,12 @@ export default function HowItWorks() {
                   {step.number}
                 </div>
                 {/* Icon and Title */}
-                <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-4">
                   <step.icon className="h-8 w-8 text-primary" />
                   <h3 className="text-xl font-semibold">{step.title}</h3>
                 </div>
                 {/* Description */}
-                <p className="text-muted-foreground text-center">{step.description}</p>
+                <p className="text-muted-foreground">{step.description}</p>
               </CardContent>
             </Card>
           ))}
