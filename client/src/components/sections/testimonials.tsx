@@ -53,7 +53,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto py-8">
           <Carousel
             opts={{
               align: "start",
@@ -61,9 +61,9 @@ export default function Testimonials() {
             }}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="py-4">
               {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 p-2">
                   <Card className="border-none shadow-md mx-2">
                     <CardContent className="pt-6">
                       <div className="text-[#FFD700] text-xl mb-4">
