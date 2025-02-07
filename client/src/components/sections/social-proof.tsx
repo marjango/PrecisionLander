@@ -38,6 +38,15 @@ export default function SocialProof() {
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            Trusted by Sellers Across UAE
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Join hundreds of successful sellers who have transformed their business with SaleScout
+          </p>
+        </div>
+
         <div className="max-w-5xl mx-auto">
           <div className="relative px-4">
             <Carousel
