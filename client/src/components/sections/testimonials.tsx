@@ -54,7 +54,7 @@ export default function Testimonials() {
         </div>
 
         <div className="max-w-5xl mx-auto py-8">
-          <div className="relative px-8">
+          <div className="relative px-4">
             <Carousel
               opts={{
                 align: "start",
@@ -85,10 +85,10 @@ export default function Testimonials() {
                 ))}
               </CarouselContent>
               <div className="absolute -left-4 top-1/2 -translate-y-1/2">
-                <CarouselPrevious className="relative left-0" />
+                <CarouselPrevious className="relative -left-1" />
               </div>
-              <div className="absolute right-0 top-1/2 -translate-y-1/2">
-                <CarouselNext className="relative right-0" />
+              <div className="absolute -right-4 top-1/2 -translate-y-1/2">
+                <CarouselNext className="relative -right-1" />
               </div>
             </Carousel>
           </div>
