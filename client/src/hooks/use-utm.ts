@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 
-const defaultTitle = "Transform Your Business with Modern Solutions";
-
 const titles = {
   1: "Maximize your sales and profits with the world's №1 repricer",
   2: "Boost your sales and profits. Instantly",
   3: "Win more BuyBoxes"
 };
+
+const defaultTitle = titles[1];
 
 export function useUtmTitle() {
   return useMemo(() => {
