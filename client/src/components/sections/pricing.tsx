@@ -5,19 +5,31 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Basic",
-    price: "$9",
-    features: ["Feature 1", "Feature 2", "Feature 3"],
+    price: "$100/m",
+    features: [
+      "Repricer for up to 100 SKUs",
+      "Notifications",
+    ],
   },
   {
     name: "Pro",
-    price: "$29",
-    features: ["All Basic features", "Feature 4", "Feature 5", "Feature 6"],
+    price: "$1 per SKU/m",
+    features: [
+      "Repricer for unlimited SKUs",
+      "Notifications system",
+      "Analytics on all sales on noon",
+      "Personal manager 24/7",
+    ],
     popular: true,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    features: ["All Pro features", "Feature 7", "Feature 8", "Feature 9"],
+    name: "Platinum",
+    price: "$3000/m",
+    features: [
+      "Everything from Pro tariff",
+      "Adding new features by your ask",
+      "Personal assistance in the UAE",
+    ],
   },
 ];
 
@@ -57,7 +69,7 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-8">Get Started</Button>
+                <Button className="w-full mt-8">Connect</Button>
               </CardContent>
             </Card>
           ))}
