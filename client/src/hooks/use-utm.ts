@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 
 const defaultTitle = "Transform Your Business with Modern Solutions";
 
@@ -9,26 +9,19 @@ const titles = {
 };
 
 export function useUtmTitle() {
-  const [title, setTitle] = useState(defaultTitle);
-
-  useEffect(() => {
+  return useMemo(() => {
     const params = new URLSearchParams(window.location.search);
     const utm_campaign = params.get('utm_campaign');
 
     switch (utm_campaign) {
       case 'repricer':
-        setTitle(titles.repricer);
-        break;
+        return titles.repricer;
       case 'instant':
-        setTitle(titles.instant);
-        break;
+        return titles.instant;
       case 'buybox':
-        setTitle(titles.buybox);
-        break;
+        return titles.buybox;
       default:
-        setTitle(defaultTitle);
+        return defaultTitle;
     }
   }, []);
-
-  return title;
 }
