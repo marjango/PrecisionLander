@@ -18,19 +18,18 @@ export default function Hero() {
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left">
             <h1 className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl md:text-6xl">
-              {title}
+              Maximize your sales and profits with the world's №1 repricer on noon and carrefour
             </h1>
             <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
-              Empower your organization with cutting-edge tools and technology.
-              Build, deploy, and scale with confidence.
+              Automate price changes. Take the Buy Box. Increase your sales!
             </p>
-            <div className="mt-10 flex items-center justify-center md:justify-start gap-x-6">
-              <Button size="lg" className="gap-2">
-                Get Started <ArrowRight className="h-4 w-4" />
+            <div className="mt-10 flex flex-col items-center md:items-start gap-4">
+              <Button size="lg" className="gap-2 w-full md:w-auto">
+                Try for free <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button variant="outline" size="lg">
-                Learn More
-              </Button>
+              <p className="text-sm text-muted-foreground">
+                No credit card required | Cancel anytime | 3-day trial
+              </p>
             </div>
           </div>
 

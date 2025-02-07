@@ -1,5 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 
+const comparisons = {
+  old: [
+    "Updating prices manually – constant monitoring, slow reactions",
+    "Scattered analytics – checking Noon, Carrefour, suppliers, WhatsApp groups",
+    "Guesswork & lost profits – competitors adjust prices faster, missed sales"
+  ],
+  new: [
+    "Auto price updates – real-time adjustments, no manual work",
+    "All data in one place – instant competitor insights, no need to search",
+    "Higher profits, less effort – AI-driven pricing, better margins, more sales"
+  ]
+};
+
 export default function Comparison() {
   return (
     <section className="py-24">
@@ -12,25 +25,19 @@ export default function Comparison() {
             See how our solution transforms your business
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Old Way */}
           <Card>
             <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-4">The Old Way</h3>
+              <h3 className="text-xl font-semibold mb-4">Manual & Time-Consuming</h3>
               <ul className="space-y-4">
-                <li className="flex items-center text-muted-foreground">
-                  <span className="mr-2">•</span>
-                  Manual price updates
-                </li>
-                <li className="flex items-center text-muted-foreground">
-                  <span className="mr-2">•</span>
-                  Time-consuming process
-                </li>
-                <li className="flex items-center text-muted-foreground">
-                  <span className="mr-2">•</span>
-                  Missed opportunities
-                </li>
+                {comparisons.old.map((point, index) => (
+                  <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                    <span className="text-red-500 mt-1">●</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
               </ul>
             </CardContent>
           </Card>
@@ -38,20 +45,14 @@ export default function Comparison() {
           {/* New Way */}
           <Card className="border-primary">
             <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-4">The New Way</h3>
+              <h3 className="text-xl font-semibold mb-4">With SaleScout: Smart & Automated</h3>
               <ul className="space-y-4">
-                <li className="flex items-center text-muted-foreground">
-                  <span className="mr-2">•</span>
-                  Automated price optimization
-                </li>
-                <li className="flex items-center text-muted-foreground">
-                  <span className="mr-2">•</span>
-                  Real-time updates
-                </li>
-                <li className="flex items-center text-muted-foreground">
-                  <span className="mr-2">•</span>
-                  Increased profits
-                </li>
+                {comparisons.new.map((point, index) => (
+                  <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                    <span className="text-green-500 mt-1">●</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
               </ul>
             </CardContent>
           </Card>
