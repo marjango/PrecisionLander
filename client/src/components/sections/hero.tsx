@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { IPhoneFrame } from "@/components/ui/iphone-frame";
+import { useUtmTitle } from "@/hooks/use-utm";
 
 export default function Hero() {
+  const title = useUtmTitle();
+
   return (
     <div className="relative overflow-hidden bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,7 +18,7 @@ export default function Hero() {
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left">
             <h1 className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl md:text-6xl">
-              Transform Your Business with Modern Solutions
+              {title}
             </h1>
             <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
               Empower your organization with cutting-edge tools and technology.
