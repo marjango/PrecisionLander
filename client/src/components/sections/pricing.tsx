@@ -53,7 +53,7 @@ export default function Pricing() {
               className={`relative ${plan.popular ? 'border-primary' : ''}`}
             >
               {plan.popular && (
-                <div className="absolute left-6 -top-3">
+                <div className="absolute md:left-1/2 md:-translate-x-1/2 left-6 -top-3">
                   <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm whitespace-nowrap">
                     Most Popular
                   </span>
