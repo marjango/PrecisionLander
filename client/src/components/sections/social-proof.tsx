@@ -1,4 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -31,17 +38,37 @@ export default function SocialProof() {
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {testimonials.map((item, index) => (
-            <Card key={index} className="border-none shadow-md">
-              <CardContent className="pt-6">
-                <div className="text-[#FFD700] text-xl mb-2">{item.stars}</div>
-                <p className="text-sm mb-4">{item.text}</p>
-                <div className="text-sm font-semibold">{item.author}</div>
-                <div className="text-xs text-muted-foreground">{item.role}</div>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="max-w-5xl mx-auto">
+          <div className="relative px-4">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="py-4">
+                {testimonials.map((item, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-2">
+                    <Card className="border-none shadow-md">
+                      <CardContent className="pt-6">
+                        <div className="text-[#FFD700] text-xl mb-2">{item.stars}</div>
+                        <p className="text-sm mb-4">{item.text}</p>
+                        <div className="text-sm font-semibold">{item.author}</div>
+                        <div className="text-xs text-muted-foreground">{item.role}</div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="absolute -left-4 top-1/2 -translate-y-1/2">
+                <CarouselPrevious className="relative -left-1" />
+              </div>
+              <div className="absolute -right-4 top-1/2 -translate-y-1/2">
+                <CarouselNext className="relative -right-1" />
+              </div>
+            </Carousel>
+          </div>
         </div>
       </div>
     </section>
