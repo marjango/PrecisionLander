@@ -36,7 +36,7 @@ const plans = [
 export default function Pricing() {
   return (
     <section className="py-24 bg-muted/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-2 sm:px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold sm:text-4xl">
             Simple, Transparent Pricing
@@ -46,7 +46,7 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <Card 
               key={index} 
@@ -54,7 +54,7 @@ export default function Pricing() {
             >
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <span className="bg-primary text-primary-foreground px-6 py-1 rounded-full text-sm min-w-[120px] inline-block text-center">
+                  <span className="bg-primary text-primary-foreground px-6 py-1 rounded-full text-sm whitespace-nowrap">
                     Most Popular
                   </span>
                 </div>
