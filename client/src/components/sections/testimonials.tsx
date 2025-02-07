@@ -1,4 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -43,26 +52,40 @@ export default function Testimonials() {
             See what our customers are saying about SaleScout
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="border-none shadow-md">
-              <CardContent className="pt-6">
-                <div className="text-[#FFD700] text-xl mb-4">
-                  {testimonial.rating}
-                </div>
-                <blockquote className="text-lg mb-6">
-                  {testimonial.text}
-                </blockquote>
-                <footer>
-                  <div className="font-semibold">{testimonial.author}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role}
-                  </div>
-                </footer>
-              </CardContent>
-            </Card>
-          ))}
+
+        <div className="max-w-5xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial) => (
+                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-none shadow-md mx-2">
+                    <CardContent className="pt-6">
+                      <div className="text-[#FFD700] text-xl mb-4">
+                        {testimonial.rating}
+                      </div>
+                      <blockquote className="text-lg mb-6">
+                        {testimonial.text}
+                      </blockquote>
+                      <footer>
+                        <div className="font-semibold">{testimonial.author}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </div>
+                      </footer>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </div>
     </section>
