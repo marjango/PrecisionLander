@@ -43,7 +43,7 @@ export default function HowItWorks() {
             <Card key={index} className="border-none shadow-md relative bg-background">
               <CardContent className="pt-6">
                 {/* Step Number */}
-                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4 mx-auto">
+                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4">
                   {step.number}
                 </div>
                 {/* Icon and Title */}
