@@ -84,7 +84,7 @@ export default function Testimonials() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="absolute -left-2 top-1/2 -translate-y-1/2">
+              <div className="absolute -left-4 top-1/2 -translate-y-1/2">
                 <CarouselPrevious className="relative left-0" />
               </div>
               <div className="absolute right-0 top-1/2 -translate-y-1/2">
