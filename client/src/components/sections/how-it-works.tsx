@@ -42,16 +42,17 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <Card key={index} className="border-none shadow-md relative bg-background">
               <CardContent className="pt-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold flex-shrink-0">
-                    {step.number}
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <step.icon className="h-8 w-8 text-primary flex-shrink-0" />
-                    <h3 className="text-xl font-semibold">{step.title}</h3>
-                  </div>
+                {/* Step Number */}
+                <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mb-4 mx-auto">
+                  {step.number}
                 </div>
-                <p className="text-muted-foreground">{step.description}</p>
+                {/* Icon and Title */}
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <step.icon className="h-8 w-8 text-primary" />
+                  <h3 className="text-xl font-semibold">{step.title}</h3>
+                </div>
+                {/* Description */}
+                <p className="text-muted-foreground text-center">{step.description}</p>
               </CardContent>
             </Card>
           ))}
