@@ -46,31 +46,38 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
-            <Card key={index} className={`relative ${plan.popular ? 'border-primary' : ''}`}>
+            <Card 
+              key={index} 
+              className={`relative h-[480px] ${plan.popular ? 'border-primary' : ''}`}
+            >
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm">
+                  <span className="bg-primary text-primary-foreground px-6 py-1 rounded-full text-sm min-w-[120px] inline-block text-center">
                     Most Popular
                   </span>
                 </div>
               )}
-              <CardHeader>
-                <h3 className="text-2xl font-bold">{plan.name}</h3>
-                <div className="mt-4 text-4xl font-bold">{plan.price}</div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <Check className="h-5 w-5 text-primary mr-2" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button className="w-full mt-8">Connect</Button>
-              </CardContent>
+              <div className="flex flex-col h-full">
+                <CardHeader className="space-y-2">
+                  <h3 className="text-2xl font-bold">{plan.name}</h3>
+                  <div className="text-3xl font-bold">{plan.price}</div>
+                </CardHeader>
+                <CardContent className="flex flex-col flex-grow">
+                  <ul className="space-y-4 mb-8">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto">
+                    <Button className="w-full">Connect</Button>
+                  </div>
+                </CardContent>
+              </div>
             </Card>
           ))}
         </div>
