@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="pt-8 flex justify-center">
-          <img src="/logo1.png" alt="Sale Scout Logo" className="h-12" />
+          <img src="/attached_assets/logo1.png" alt="Sale Scout Logo" className="h-12" />
         </div>
 
         <div className="relative z-10 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
@@ -33,7 +33,7 @@ export default function Hero() {
 
           {/* iPhone with Video */}
           <div className="flex-1 flex justify-center items-center">
-            <IPhoneFrame videoSrc="/VIDEO_Phone.mp4" />
+            <IPhoneFrame videoSrc="/attached_assets/VIDEO_Phone.mp4" />
           </div>
         </div>
       </div>
