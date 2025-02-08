@@ -22,7 +22,8 @@ export function WistiaEmbed() {
         background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/byqci6u02b/swatch');
         display: block;
         filter: blur(5px);
-        padding-top: 177.78%;
+        height: 100%;
+        width: 100%;
       }
     `;
     document.head.appendChild(style);
@@ -36,8 +37,12 @@ export function WistiaEmbed() {
   }, []);
 
   return (
-    <div className="w-full">
-      <wistia-player media-id="byqci6u02b" aspect="0.5625"></wistia-player>
+    <div className="h-full w-full">
+      <wistia-player 
+        media-id="byqci6u02b" 
+        aspect="0.5625"
+        className="h-full w-full"
+      ></wistia-player>
     </div>
   );
 }
