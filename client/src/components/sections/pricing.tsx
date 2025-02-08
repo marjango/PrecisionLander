@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { ContactFormDialog } from "@/components/ui/contact-form-dialog";
 
 const plans = [
   {
@@ -48,9 +49,9 @@ export default function Pricing() {
 
         <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
-            <Card 
-              key={index} 
-              className={`relative ${plan.popular ? 'border-primary' : ''}`}
+            <Card
+              key={index}
+              className={`relative ${plan.popular ? "border-primary" : ""}`}
             >
               {plan.popular && (
                 <div className="absolute md:left-1/2 md:-translate-x-1/2 left-6 -top-3">
@@ -72,7 +73,11 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full">Connect my store</Button>
+                <Button className="w-full">
+                  <ContactFormDialog>
+                    <Button className="w-full">Connect my store</Button>
+                  </ContactFormDialog>
+                </Button>
               </CardContent>
             </Card>
           ))}

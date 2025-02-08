@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { UserPlus, Link as LinkIcon, Settings } from "lucide-react";
+import { ContactFormDialog } from "@/components/ui/contact-form-dialog";
 
 const steps = [
   {
@@ -60,7 +61,9 @@ export default function HowItWorks() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button size="lg">Connect my store</Button>
+          <ContactFormDialog>
+            <Button size="lg">Connect my store</Button>
+          </ContactFormDialog>
         </div>
       </div>
     </section>

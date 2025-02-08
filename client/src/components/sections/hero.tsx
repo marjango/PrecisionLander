@@ -7,6 +7,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { ContactFormDialog } from "@/components/ui/contact-form-dialog";
 
 export default function Hero() {
   const title = useUtmTitle();
@@ -37,9 +38,11 @@ export default function Hero() {
               Automate price changes. Take the Buy Box. Increase your sales!
             </p>
             <div className="mt-10 flex flex-col items-center md:items-start gap-4">
-              <Button size="lg" className="gap-2 w-full md:w-auto bg-blue-600 hover:bg-blue-700">
-                Try for free <ArrowRight className="h-4 w-4" />
-              </Button>
+              <ContactFormDialog>
+                <Button size="lg" className="gap-2 w-full md:w-auto bg-blue-600 hover:bg-blue-700">
+                  Try for free <ArrowRight className="h-4 w-4" />
+                </Button>
+              </ContactFormDialog>
               <p className="text-sm text-muted-foreground">
                 No credit card required | Cancel anytime | 3-day trial
               </p>

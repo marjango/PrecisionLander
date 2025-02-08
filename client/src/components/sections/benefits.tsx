@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Bell, HeadphonesIcon, BarChart3 } from "lucide-react";
 import { IPhoneFrame } from "@/components/ui/iphone-frame";
+import { ContactFormDialog } from "@/components/ui/contact-form-dialog";
 
 const benefits = [
   {
@@ -47,7 +48,9 @@ export default function Benefits() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button size="lg">Connect my store</Button>
+          <ContactFormDialog>
+            <Button size="lg">Connect my store</Button>
+          </ContactFormDialog>
         </div>
 
         <div className="mt-16">
