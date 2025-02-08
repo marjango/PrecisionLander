@@ -36,20 +36,24 @@ export default function Hero() {
             </h1>
 
             {/* Marketplace Logos */}
-            <div className="mt-8 flex items-center justify-center md:justify-start gap-8">
-              <img 
-                src="/noon-logo.png" 
-                alt="noon Marketplace" 
-                className="h-8 sm:h-10"
-              />
-              <img 
-                src="/carrefour-logo.png" 
-                alt="Carrefour Marketplace" 
-                className="h-8 sm:h-10"
-              />
+            <div className="mt-8 flex items-center justify-center md:justify-start space-x-12">
+              <div className="w-32">
+                <img 
+                  src="/noon-logo.png" 
+                  alt="noon Marketplace" 
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <div className="w-32">
+                <img 
+                  src="/carrefour-logo.png" 
+                  alt="Carrefour Marketplace" 
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             </div>
 
-            <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
+            <p className="mt-8 text-lg text-muted-foreground sm:text-xl">
               Automate price changes. Take the Buy Box. Increase your sales!
             </p>
 
