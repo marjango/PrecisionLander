@@ -14,9 +14,17 @@ export default function Hero() {
   return (
     <div className="relative overflow-hidden bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <div className="pt-8 flex justify-center">
-          <img src="/logo1.png" alt="Sale Scout Logo" className="h-12" />
+        {/* Header with Logo and Buttons */}
+        <div className="pt-8 flex justify-between items-center">
+          <img src="/logo1.png" alt="Sale Scout Logo" className="h-8 sm:h-12" />
+          <div className="flex gap-4">
+            <Button variant="outline" className="hidden sm:flex">
+              Log In
+            </Button>
+            <Button className="bg-blue-600 hover:bg-blue-700">
+              Sign Up
+            </Button>
+          </div>
         </div>
 
         <div className="relative z-10 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
