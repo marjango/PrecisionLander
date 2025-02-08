@@ -46,7 +46,7 @@ export default function Hero() {
               </div>
               <div className="w-32">
                 <img 
-                  src="/carrefour-logo.png" 
+                  src="/carrefour-seeklogo.png" 
                   alt="Carrefour Marketplace" 
                   className="w-full h-auto object-contain"
                 />
