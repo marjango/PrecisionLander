@@ -37,6 +37,21 @@ export default function Hero() {
             <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
               Automate price changes. Take the Buy Box. Increase your sales!
             </p>
+
+            {/* Marketplace Logos */}
+            <div className="mt-8 flex items-center justify-center md:justify-start gap-8">
+              <img 
+                src="/noon-logo.png" 
+                alt="noon Marketplace" 
+                className="h-8 sm:h-10"
+              />
+              <img 
+                src="/carrefour-logo.png" 
+                alt="Carrefour Marketplace" 
+                className="h-8 sm:h-10"
+              />
+            </div>
+
             <div className="mt-10 flex flex-col items-center md:items-start gap-4">
               <ContactFormDialog>
                 <Button size="lg" className="gap-2 w-full md:w-auto bg-blue-600 hover:bg-blue-700">
