@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { VideoPlayer } from "@/components/ui/video-player";
+import { WistiaEmbed } from "@/components/ui/wistia-embed";
 import { useUtmTitle } from "@/hooks/use-utm";
 
 export default function Hero() {
@@ -33,9 +33,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Video Player */}
+          {/* Wistia Video */}
           <div className="flex-1 w-full max-w-2xl mx-auto">
-            <VideoPlayer videoSrc="/VIDEO_Benefits.mp4" />
+            <WistiaEmbed />
           </div>
         </div>
       </div>
