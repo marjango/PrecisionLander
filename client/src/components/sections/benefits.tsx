@@ -46,12 +46,13 @@ export default function Benefits() {
           ))}
         </div>
 
+        <div className="mt-12 text-center">
+          <Button size="lg">Connect my store</Button>
+        </div>
+
         <div className="mt-16">
           <div className="max-w-sm mx-auto">
             <IPhoneFrame videoSrc="/VIDEO_Phone_optimized.mp4" />
-          </div>
-          <div className="mt-12 text-center">
-            <Button size="lg">Connect my store</Button>
           </div>
         </div>
       </div>

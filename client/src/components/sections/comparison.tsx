@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const comparisons = {
   old: [
@@ -56,6 +57,10 @@ export default function Comparison() {
               </ul>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button size="lg">Connect my store</Button>
         </div>
       </div>
     </section>
