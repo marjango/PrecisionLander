@@ -31,7 +31,7 @@ export default function Hero() {
         <div className="relative z-10 py-12 md:py-16 flex flex-col md:flex-row items-center gap-8">
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-[3rem] font-extrabold text-black md:text-[3.75rem]">
+            <h1 className="text-[3rem] leading-[1.1] font-extrabold text-black md:text-[3.75rem]">
               {title}
             </h1>
 
