@@ -1,21 +1,22 @@
 import { Link } from "wouter";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-muted/50 py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and description */}
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-1">
             <img src="/logo1.png" alt="Sale Scout Logo" className="h-8 mb-4" />
             <p className="text-sm text-muted-foreground">
-              Empowering businesses with intelligent pricing solutions
+              The world's №1 repricer
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation */}
           <div>
-            <h3 className="font-semibold mb-4">Product</h3>
+            <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li><Link href="#features">Features</Link></li>
               <li><Link href="#pricing">Pricing</Link></li>
@@ -23,23 +24,29 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
-              <li><Link href="/privacy">Privacy</Link></li>
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Email: contact@salescout.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
+              <li>Phone: +971 58 566 1204</li>
+              <li>Working hours: 24/7</li>
             </ul>
+          </div>
+
+          {/* Social Media */}
+          <div>
+            <h3 className="font-semibold mb-4">Social Media</h3>
+            <div className="flex space-x-4">
+              <a href="https://www.facebook.com/salescoutme" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                <Facebook className="h-6 w-6" />
+              </a>
+              <a href="https://www.instagram.com/salescout.me" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                <Instagram className="h-6 w-6" />
+              </a>
+              <a href="https://www.youtube.com/@salescoutme" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                <Youtube className="h-6 w-6" />
+              </a>
+            </div>
           </div>
         </div>
 
