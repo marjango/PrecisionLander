@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { WistiaEmbed } from "@/components/ui/wistia-embed";
 import { useUtmTitle } from "@/hooks/use-utm";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 export default function Hero() {
   const title = useUtmTitle();
@@ -30,10 +35,24 @@ export default function Hero() {
               <p className="text-sm text-muted-foreground">
                 No credit card required | Cancel anytime | 3-day trial
               </p>
+
+              {/* Mobile-only video button */}
+              <Collapsible className="w-full md:hidden">
+                <CollapsibleTrigger asChild>
+                  <Button variant="outline" className="w-full mt-4 gap-2">
+                    Watch video of how it works <ChevronDown className="h-4 w-4" />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mt-4">
+                  <div className="w-full">
+                    <WistiaEmbed />
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
             </div>
           </div>
 
-          {/* Wistia Video */}
+          {/* Desktop Video */}
           <div className="hidden md:flex flex-1 justify-center">
             <div className="md:w-[280px] lg:w-[360px]">
               <WistiaEmbed />
