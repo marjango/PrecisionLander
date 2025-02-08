@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Youtube } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -37,14 +37,11 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Social Media</h3>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/salescoutme" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+              <a href="https://www.facebook.com/people/UAESaleScoutme/61568159456611/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="https://www.instagram.com/salescout.me" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+              <a href="https://www.instagram.com/uae.salescout.me/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                 <Instagram className="h-6 w-6" />
-              </a>
-              <a href="https://www.youtube.com/@salescoutme" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                <Youtube className="h-6 w-6" />
               </a>
             </div>
           </div>
