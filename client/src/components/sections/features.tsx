@@ -1,4 +1,5 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Zap, Shield, Smartphone, BarChart } from "lucide-react";
 
 const features = [
@@ -44,10 +45,13 @@ export default function Features() {
                 <h3 className="text-xl font-semibold">{feature.title}</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <p className="text-muted-foreground mb-6">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Button size="lg">Connect my store</Button>
         </div>
       </div>
     </section>

@@ -72,7 +72,7 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full">Connect</Button>
+                <Button className="w-full">Connect my store</Button>
               </CardContent>
             </Card>
           ))}
