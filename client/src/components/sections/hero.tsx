@@ -34,8 +34,8 @@ export default function Hero() {
           </div>
 
           {/* Wistia Video */}
-          <div className="flex-1 w-full max-w-md md:max-w-lg mx-auto">
-            <div className="aspect-[9/16] md:aspect-video">
+          <div className="flex-1 w-full flex justify-center">
+            <div className="w-full h-[200px] md:h-auto md:w-[360px]">
               <WistiaEmbed />
             </div>
           </div>

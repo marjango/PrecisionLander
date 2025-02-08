@@ -40,7 +40,6 @@ export function WistiaEmbed() {
     <div className="h-full w-full">
       <wistia-player 
         media-id="byqci6u02b" 
-        aspect="0.5625"
         className="h-full w-full"
       ></wistia-player>
     </div>
