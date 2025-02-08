@@ -34,9 +34,6 @@ export default function Hero() {
             <h1 className="text-4xl font-extrabold text-black sm:text-5xl md:text-6xl">
               {title}
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
-              Automate price changes. Take the Buy Box. Increase your sales!
-            </p>
 
             {/* Marketplace Logos */}
             <div className="mt-8 flex items-center justify-center md:justify-start gap-8">
@@ -51,6 +48,10 @@ export default function Hero() {
                 className="h-8 sm:h-10"
               />
             </div>
+
+            <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
+              Automate price changes. Take the Buy Box. Increase your sales!
+            </p>
 
             <div className="mt-10 flex flex-col items-center md:items-start gap-4">
               <ContactFormDialog>
