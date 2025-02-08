@@ -35,7 +35,7 @@ export default function Hero() {
 
           {/* iPhone with Video */}
           <div className="flex-1 flex justify-center items-center">
-            <IPhoneFrame videoSrc="/VIDEO_Phone_optimized.mp4" />
+            <IPhoneFrame videoSrc="/VIDEO_Benefits.mp4" />
           </div>
         </div>
       </div>

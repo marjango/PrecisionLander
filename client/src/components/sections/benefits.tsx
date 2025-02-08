@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Bell, HeadphonesIcon, BarChart3 } from "lucide-react";
+import { IPhoneFrame } from "@/components/ui/iphone-frame";
 
 const benefits = [
   {
@@ -42,6 +43,12 @@ export default function Benefits() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-16">
+          <div className="max-w-sm mx-auto">
+            <IPhoneFrame videoSrc="/VIDEO_Phone_optimized.mp4" />
+          </div>
         </div>
       </div>
     </section>
