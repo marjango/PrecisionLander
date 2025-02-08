@@ -18,7 +18,7 @@ export default function Hero() {
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left">
             <h1 className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl md:text-6xl">
-              Maximize your sales and profits with the world's №1 repricer on noon and carrefour
+              {title}
             </h1>
             <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
               Automate price changes. Take the Buy Box. Increase your sales!
@@ -35,7 +35,7 @@ export default function Hero() {
 
           {/* iPhone with Video */}
           <div className="flex-1 flex justify-center items-center">
-            <IPhoneFrame videoSrc="/VIDEO_Phone.mp4" />
+            <IPhoneFrame videoSrc="/VIDEO_Phone_optimized.mp4" />
           </div>
         </div>
       </div>
