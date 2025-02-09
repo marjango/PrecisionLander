@@ -21,6 +21,7 @@ export function WistiaPlayer({ videoSrc, className = "" }: WistiaPlayerProps) {
               fullscreenButton: true,
               playButton: true,
               playerColor: "666666",
+              loop: true,
             },
           },
         }}

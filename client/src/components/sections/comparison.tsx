@@ -61,7 +61,7 @@ export default function Comparison() {
         </div>
 
         <div className="mt-12 text-center">
-          <ContactFormDialog>
+          <ContactFormDialog buttonName="Connect my store 1">
             <Button size="lg">Connect my store</Button>
           </ContactFormDialog>
         </div>

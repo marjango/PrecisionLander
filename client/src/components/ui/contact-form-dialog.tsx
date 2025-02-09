@@ -13,6 +13,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Check } from "lucide-react";
+import axios from 'axios'
 
 const phoneSchema = z.object({
   phone: z.string()
@@ -25,9 +26,10 @@ type FormData = z.infer<typeof phoneSchema>;
 
 interface ContactFormDialogProps {
   children: React.ReactNode;
+  buttonName: string
 }
 
-export function ContactFormDialog({ children }: ContactFormDialogProps) {
+export function ContactFormDialog({ children, buttonName }: ContactFormDialogProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -38,13 +40,22 @@ export function ContactFormDialog({ children }: ContactFormDialogProps) {
     },
   });
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     // Here you would typically send the data to your backend
+    const body = { 
+      phone: data.phone, 
+      utm: "Main landing",
+      button: buttonName
+    };
+    axios.post('https://uae.app.salescout.me/api/profile/contact-me', body, {
+      headers: { 'Content-Type': 'application/json' }
+    })
     console.log("Phone number submitted:", data.phone);
     setIsSuccess(true);
   };
 
   const handleOpenChange = (open: boolean) => {
+    console.log("isOpen", open, buttonName);
     setIsOpen(open);
     if (!open) {
       setIsSuccess(false);

@@ -61,7 +61,7 @@ export default function HowItWorks() {
         </div>
 
         <div className="mt-12 text-center">
-          <ContactFormDialog>
+          <ContactFormDialog buttonName="Connect my store 3">
             <Button size="lg">Connect my store</Button>
           </ContactFormDialog>
         </div>

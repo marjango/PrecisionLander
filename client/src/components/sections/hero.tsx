@@ -19,12 +19,18 @@ export default function Hero() {
         <div className="pt-6 flex justify-between items-center">
           <img src="/logo1.png" alt="Sale Scout Logo" className="h-8 sm:h-10" />
           <div className="flex gap-4">
-            <Button variant="outline" className="hidden sm:flex">
-              Log In
-            </Button>
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Register
-            </Button>
+            <a href="https://uae.app.salescout.me/login?">
+              <Button variant="outline" className="hidden sm:flex">
+                Log In
+              </Button>
+            </a>
+            
+            <a href="https://uae.app.salescout.me/registration">
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Register
+              </Button>
+            </a>
+            
           </div>
         </div>
 
@@ -58,7 +64,7 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col items-center md:items-start gap-3">
-              <ContactFormDialog>
+              <ContactFormDialog buttonName="Try for free">
                 <Button size="lg" className="gap-2 w-full md:w-auto bg-blue-600 hover:bg-blue-700">
                   Try for free <ArrowRight className="h-4 w-4" />
                 </Button>

@@ -48,7 +48,7 @@ export default function Benefits() {
         </div>
 
         <div className="mt-12 text-center">
-          <ContactFormDialog>
+          <ContactFormDialog buttonName="Connect my store 2">
             <Button size="lg">Connect my store</Button>
           </ContactFormDialog>
         </div>

@@ -8,7 +8,7 @@ export function WistiaEmbed() {
     script1.async = true;
 
     const script2 = document.createElement('script');
-    script2.src = "https://fast.wistia.com/embed/byqci6u02b.js";
+    script2.src = "https://fast.wistia.com/embed/nivyd1sxlz.js";
     script2.async = true;
     script2.type = "module";
 
@@ -18,8 +18,8 @@ export function WistiaEmbed() {
     // Add styles
     const style = document.createElement('style');
     style.textContent = `
-      wistia-player[media-id='byqci6u02b']:not(:defined) {
-        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/byqci6u02b/swatch');
+      wistia-player[media-id='nivyd1sxlz']:not(:defined) {
+        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/nivyd1sxlz/swatch');
         display: block;
         filter: blur(5px);
         height: 100%;
@@ -39,9 +39,21 @@ export function WistiaEmbed() {
   return (
     <div className="h-full w-full">
       <wistia-player 
-        media-id="byqci6u02b" 
+        media-id="nivyd1sxlz" 
         className="h-full w-full"
+        // aspect="0.46153846153846156"
+        autoplay 
+        loop
       ></wistia-player>
     </div>
   );
 }
+
+{/* <script src="https://fast.wistia.com/player.js" async>
+</script>
+<script src="https://fast.wistia.com/embed/fodj60nzuj.js" async type="module"></script>
+<style>wistia-player[media-id='fodj60nzuj']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/fodj60nzuj/swatch'); display: block; filter: blur(5px); padding-top:216.67%; }</style> 
+<wistia-player media-id="fodj60nzuj" aspect="0.46153846153846156"></wistia-player> */}
+
+
+{/* <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/nivyd1sxlz.js" async type="module"></script><style>wistia-player[media-id='nivyd1sxlz']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/nivyd1sxlz/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }</style> <wistia-player media-id="nivyd1sxlz" aspect="0.5625"></wistia-player> */}

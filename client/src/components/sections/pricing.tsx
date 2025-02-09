@@ -74,7 +74,7 @@ export default function Pricing() {
                   ))}
                 </ul>
                 <Button className="w-full">
-                  <ContactFormDialog>
+                  <ContactFormDialog buttonName={`Plan "${plan.name}"`}>
                     <Button className="w-full">Connect my store</Button>
                   </ContactFormDialog>
                 </Button>
