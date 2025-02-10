@@ -42,8 +42,6 @@ export function WistiaEmbed() {
         media-id="nivyd1sxlz" 
         className="h-full w-full"
         // aspect="0.46153846153846156"
-        autoplay 
-        loop
       ></wistia-player>
     </div>
   );

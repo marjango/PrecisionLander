@@ -27,7 +27,7 @@ export default function Benefits() {
     <section className="py-24 bg-muted/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold sm:text-4xl">
+          <h2 className="text-3xl font-bold sm:text-4xl" id="features">
             Key Benefits
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
