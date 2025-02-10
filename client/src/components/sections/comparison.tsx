@@ -4,13 +4,13 @@ import { ContactFormDialog } from "@/components/ui/contact-form-dialog";
 
 const comparisons = {
   old: [
-    "Updating prices manually – constant monitoring, slow reactions",
-    "Scattered analytics – checking Noon, Carrefour, suppliers, WhatsApp groups",
-    "Guesswork & lost profits – competitors adjust prices faster, missed sales"
+    "Manually updating prices takes a lot of time – slow reactions and constant monitoring.",
+    "Hiring assistants means extra costs – they need salaries, aren't available on weekends, and no one watches the system at night. During holidays, you have to do everything yourself.",
+    "Guesswork leads to lost profits – competitors change prices faster, and you miss out on sales."
   ],
   new: [
-    "Auto price updates – real-time adjustments, no manual work",
-    "All data in one place – instant competitor insights, no need to search",
+    "Auto price updates – real-time fast adjustments, no manual work",
+    "SaleScout works non-stop, 24/7/365 – it keeps your store running even while you sleep.",
     "Higher profits, less effort – AI-driven pricing, better margins, more sales"
   ]
 };

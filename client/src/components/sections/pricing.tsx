@@ -51,11 +51,11 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative ${plan.popular ? "border-primary" : ""}`}
+              className={`relative ${plan.popular ? "border-green-500 shadow-lg" : ""}`}
             >
               {plan.popular && (
                 <div className="absolute md:left-1/2 md:-translate-x-1/2 left-6 -top-3">
-                  <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm whitespace-nowrap">
+                  <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm whitespace-nowrap">
                     Most Popular
                   </span>
                 </div>
@@ -68,16 +68,16 @@ export default function Pricing() {
                 <ul className="space-y-4 mb-6">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <Check className={`h-5 w-5 ${plan.popular ? "text-green-500" : "text-primary"} mt-0.5 flex-shrink-0`} />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full">
-                  <ContactFormDialog buttonName={`Plan "${plan.name}"`}>
-                    <Button className="w-full">Connect my store</Button>
-                  </ContactFormDialog>
-                </Button>
+                <ContactFormDialog buttonName={`Plan "${plan.name}"`}>
+                  <Button className={`w-full ${plan.popular ? "bg-green-500 hover:bg-green-600" : ""}`}>
+                    Connect my store
+                  </Button>
+                </ContactFormDialog>
               </CardContent>
             </Card>
           ))}

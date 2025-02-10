@@ -3,27 +3,27 @@ import { Card, CardContent } from "@/components/ui/card";
 const testimonials = [
   {
     stars: "★★★★★",
-    text: "SaleScout helped me to increase revenue up to 33%",
+    text: "SaleScout did all the work I used to do by myself. Now I have more time to grow my business.",
     author: "Ahmed",
-    role: "noon seller"
+    role: "Noon Seller"
   },
   {
     stars: "★★★★★",
-    text: "Now I have more time to do business, SaleScout automated all processes that I did by myself before",
+    text: "Thanks to SaleScout, my store works by itself. Now I can spend more time with my family.",
     author: "Fatima",
-    role: "noon seller"
+    role: "Noon Seller"
   },
   {
     stars: "★★★★★",
-    text: "Whenever noon does something, I receive notifications to my phone, and can react immediately",
+    text: "With SaleScout, my sales went up, and I finally bought my dream car!",
     author: "Aziz",
-    role: "noon seller"
+    role: "Noon Seller"
   },
   {
     stars: "★★★★★",
-    text: "Now 95% of my SKUs on the first place, and system works 24/7, I can sleep tight",
+    text: "After I started using SaleScout, I sleep much better. My smartwatch shows my sleep has improved. I don't worry about BuyBox, it is always mine now",
     author: "Hassan",
-    role: "Carrefour seller"
+    role: "Carrefour Seller"
   }
 ];
 
@@ -46,7 +46,7 @@ export default function SocialProof() {
               <Card key={index} className="border-none shadow-md h-full">
                 <CardContent className="pt-4 px-4 sm:pt-6 sm:px-6">
                   <div className="text-[#FFD700] text-lg sm:text-xl mb-2">{item.stars}</div>
-                  <p className="text-sm sm:text-base mb-3">{item.text}</p>
+                  <p className="text-sm sm:text-base mb-3 italic">{item.text}</p>
                   <div className="text-sm font-semibold">{item.author}</div>
                   <div className="text-xs text-muted-foreground">{item.role}</div>
                 </CardContent>
