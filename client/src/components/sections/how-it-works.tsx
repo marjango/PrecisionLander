@@ -18,7 +18,7 @@ const steps = [
   },
   {
     number: "3",
-    title: "Give min max prices",
+    title: "Set min max prices",
     description: "Provide min and max prices for each SKU, in order to keep your margin",
     icon: Settings,
   },

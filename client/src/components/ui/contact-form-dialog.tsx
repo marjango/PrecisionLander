@@ -14,6 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Check } from "lucide-react";
 import axios from 'axios'
+import { getUtm } from "@/hooks/use-utm";
 
 const phoneSchema = z.object({
   phone: z.string()
@@ -42,10 +43,13 @@ export function ContactFormDialog({ children, buttonName }: ContactFormDialogPro
 
   const onSubmit = async (data: FormData) => {
     // Here you would typically send the data to your backend
+    const utm_data = getUtm()
     const body = { 
       phone: data.phone, 
       utm: "Main landing",
-      button: buttonName
+      button: buttonName,
+      utm_campaign: utm_data.utm_campaign,
+      utm_source: utm_data.utm_source,
     };
     axios.post('https://uae.app.salescout.me/api/profile/contact-me', body, {
       headers: { 'Content-Type': 'application/json' }

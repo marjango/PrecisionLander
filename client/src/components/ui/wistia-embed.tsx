@@ -37,7 +37,7 @@ export function WistiaEmbed() {
   }, []);
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full" id="video">
       <wistia-player 
         media-id="nivyd1sxlz" 
         className="h-full w-full"

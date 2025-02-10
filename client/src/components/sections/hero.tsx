@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
 import { WistiaEmbed } from "@/components/ui/wistia-embed";
 import { useUtmTitle } from "@/hooks/use-utm";
 import {
@@ -8,9 +8,20 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { ContactFormDialog } from "@/components/ui/contact-form-dialog";
+import { useState } from "react";
 
 export default function Hero() {
   const title = useUtmTitle();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleSmoothScroll = () => {
+    // event.preventDefault();
+    const target = document.getElementById("video");
+
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <div className="relative overflow-hidden bg-background">
@@ -74,11 +85,19 @@ export default function Hero() {
               </p>
 
               {/* Mobile-only video button */}
-              <Collapsible className="w-full md:hidden">
+              <Collapsible className="w-full md:hidden" id="video" onOpenChange={(open) => {
+                  setIsOpen(open)
+                  if (open) {
+                    handleSmoothScroll()
+                  }
+                }} open={isOpen}>
                 <CollapsibleTrigger asChild>
+                {/* <a href="" id="video"> */}
                   <Button variant="outline" className="w-full mt-4 gap-2">
-                    Watch video of how it works <ChevronDown className="h-4 w-4" />
+                    Watch video of how it works {isOpen ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
                   </Button>
+                {/* </a> */}
+                  
                 </CollapsibleTrigger>
                 <CollapsibleContent className="mt-4">
                   <div className="w-full">
