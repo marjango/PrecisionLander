@@ -67,12 +67,12 @@ export default function SocialProof() {
           </p>
         </div>
 
-        <div className=" max-w-4xl mx-auto">
-          <div className=" relative ">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative ">
             <Swiper
               modules={[Navigation, EffectCoverflow]}
               effect="coverflow"
-              loop={false}
+              loop={true}
               watchOverflow={true}
               slidesPerView={3}
               slidesPerGroup={1}
@@ -108,21 +108,10 @@ export default function SocialProof() {
                 swiperRef.current = swiper;
               }}
             >
-              <SwiperSlide onClick={() => handleSlideClick(0)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed1 /> 
-                </div>
-              </SwiperSlide>
-              <SwiperSlide onClick={() => handleSlideClick(1)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed2 /> 
-                </div>
-              </SwiperSlide>
-              <SwiperSlide onClick={() => handleSlideClick(2)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed3 /> 
-                </div>
-              </SwiperSlide>
+              <SwiperSlide onClick={() => handleSlideClick(0)}><WistiaEmbed1 /></SwiperSlide>
+              <SwiperSlide onClick={() => handleSlideClick(1)}><WistiaEmbed2 /></SwiperSlide>
+              <SwiperSlide onClick={() => handleSlideClick(2)}><WistiaEmbed3 /></SwiperSlide>
+               <SwiperSlide onClick={() => handleSlideClick(3)}><WistiaEmbed3 /></SwiperSlide>
             </Swiper>
 
             <div className="custom-prev absolute top-1/2 left-4 z-10 flex items-center justify-center w-10 h-10 bg-white text-gray-800 rounded-full shadow-md transform -translate-y-1/2 hover:bg-gray-100 transition duration-300">

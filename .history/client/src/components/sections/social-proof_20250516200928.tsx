@@ -3,21 +3,11 @@ import { WistiaEmbed1 } from "@/components/ui/wistia-embed-1";
 import { WistiaEmbed2 } from "@/components/ui/wistia-embed-2";
 import { WistiaEmbed3 } from "@/components/ui/wistia-embed-3";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper as SwiperClass } from 'swiper'; 
 import { Navigation, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
-import { useRef } from 'react';
-
-const slideClassName = `
-  transition-opacity transition-filter duration-[600ms] ease-in-out
-  blur-sm opacity-70
-  hover:opacity-80 /* Опционально: небольшой эффект при наведении на неактивный слайд */
-  [&.swiper-slide-active]:blur-none
-  [&.swiper-slide-active]:opacity-100
-  [&.swiper-slide-active]:scale-100 /* Убедимся, что активный слайд масштабируется до 100%, если coverflow его уменьшает */
-`;
+import { useRef, useEffect } from 'react';
 
 
 const testimonials = [
@@ -48,12 +38,22 @@ const testimonials = [
 ];
 
 export default function SocialProof() {
-  const swiperRef = useRef<SwiperClass | null>(null);
-  const handleSlideClick = (index: number) => {
-    if (swiperRef.current && swiperRef.current.slideTo) {
-      swiperRef.current.slideTo(index);
-    }
-  };
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
+
+  useEffect(() => {
+    const swiper = new Swiper('.swiper-container', {
+      modules: [Navigation],
+      navigation: {
+        prevEl: navigationPrevRef.current,
+        nextEl: navigationNextRef.current,
+      },
+    });
+
+    return () => {
+      swiper.destroy();
+    };
+  }, []);
 
   return (
     <section className="py-16 bg-muted/30">
@@ -67,63 +67,44 @@ export default function SocialProof() {
           </p>
         </div>
 
-        <div className=" max-w-4xl mx-auto">
-          <div className=" relative ">
-            <Swiper
-              modules={[Navigation, EffectCoverflow]}
-              effect="coverflow"
-              loop={false}
-              watchOverflow={true}
-              slidesPerView={3}
-              slidesPerGroup={1}
-              spaceBetween={30}
-              centeredSlides={true}
-              freeMode={true}
-              initialSlide={1}
-              speed={600}
-              navigation={{
-                nextEl: '.custom-next',
-                prevEl: '.custom-prev',
-              }}
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 2,
-                slideShadows: false,
-                scale: 0.9,
-              }}
-              breakpoints={{
-                640: {
-                  slidesPerView: 1,
-                },
-                768: {
-                  slidesPerView: 2,
-                },
-                1024: {
-                  slidesPerView: 3,
-                },
-              }}
-              onSwiper={(swiper) => {
-                swiperRef.current = swiper;
-              }}
-            >
-              <SwiperSlide onClick={() => handleSlideClick(0)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed1 /> 
-                </div>
-              </SwiperSlide>
-              <SwiperSlide onClick={() => handleSlideClick(1)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed2 /> 
-                </div>
-              </SwiperSlide>
-              <SwiperSlide onClick={() => handleSlideClick(2)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed3 /> 
-                </div>
-              </SwiperSlide>
-            </Swiper>
+        <div className="max-w-7xl mx-auto">
+          <div className="relative">
+          <Swiper
+            className="swiper-container"
+            modules={[Navigation, EffectCoverflow]}
+            effect="coverflow"
+            loop={true}
+            slidesPerView={3}
+            spaceBetween={30}
+            speed={600}
+            navigation={{
+              prevEl: navigationPrevRef.current,
+              nextEl: navigationNextRef.current,
+            }}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2,
+              slideShadows: false,
+              scale: 0.9,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+          >
+            <SwiperSlide><WistiaEmbed1 /></SwiperSlide>
+            <SwiperSlide><WistiaEmbed2 /></SwiperSlide>
+            <SwiperSlide><WistiaEmbed3 /></SwiperSlide>
+          </Swiper>
 
             <div className="custom-prev absolute top-1/2 left-4 z-10 flex items-center justify-center w-10 h-10 bg-white text-gray-800 rounded-full shadow-md transform -translate-y-1/2 hover:bg-gray-100 transition duration-300">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -136,7 +117,7 @@ export default function SocialProof() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
             </div>
-          </div>
+        </div>
 
           
 

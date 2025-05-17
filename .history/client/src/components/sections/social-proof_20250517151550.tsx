@@ -109,20 +109,12 @@ export default function SocialProof() {
               }}
             >
               <SwiperSlide onClick={() => handleSlideClick(0)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed1 /> 
+                <div className="video-wrapper w-72 h-40" style={{ width: '296px', height: '166px' }}>
+                  <WistiaEmbed1 /> {/* Предполагается, что WistiaEmbed находится внутри */}
                 </div>
               </SwiperSlide>
-              <SwiperSlide onClick={() => handleSlideClick(1)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed2 /> 
-                </div>
-              </SwiperSlide>
-              <SwiperSlide onClick={() => handleSlideClick(2)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed3 /> 
-                </div>
-              </SwiperSlide>
+              <SwiperSlide onClick={() => handleSlideClick(1)}><WistiaEmbed2 /></SwiperSlide>
+              <SwiperSlide onClick={() => handleSlideClick(2)}><WistiaEmbed3 /></SwiperSlide>
             </Swiper>
 
             <div className="custom-prev absolute top-1/2 left-4 z-10 flex items-center justify-center w-10 h-10 bg-white text-gray-800 rounded-full shadow-md transform -translate-y-1/2 hover:bg-gray-100 transition duration-300">

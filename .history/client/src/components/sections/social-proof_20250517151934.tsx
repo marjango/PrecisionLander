@@ -114,12 +114,12 @@ export default function SocialProof() {
                 </div>
               </SwiperSlide>
               <SwiperSlide onClick={() => handleSlideClick(1)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
+                 <div className="m-auto" style={{ width: '50%', height: '50%' }}>
                   <WistiaEmbed2 /> 
                 </div>
               </SwiperSlide>
               <SwiperSlide onClick={() => handleSlideClick(2)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
+                <div className="m-auto" style={{ width: '50%', height: '50%' }}>
                   <WistiaEmbed3 /> 
                 </div>
               </SwiperSlide>
