@@ -19,6 +19,7 @@ const slideClassName = `
   [&.swiper-slide-active]:scale-100 /* Убедимся, что активный слайд масштабируется до 100%, если coverflow его уменьшает */
 `;
 
+
 const testimonials = [
   {
     stars: "★★★★★",

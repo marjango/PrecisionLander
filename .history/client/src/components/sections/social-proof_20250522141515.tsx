@@ -1,14 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { WistiaEmbed1 } from "@/components/ui/wistia-embed-1";
-import { WistiaEmbed2 } from "@/components/ui/wistia-embed-2";
-import { WistiaEmbed3 } from "@/components/ui/wistia-embed-3";
+// Импортируем наш обновленный компонент
+import { WistiaPlayer } from "@/components/ui/WistiaPlayer"; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperClass } from 'swiper'; 
 import { Navigation, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
-import { useRef } from 'react';
+import { useRef, useState } from 'react'; // Импортируем useState
 
 const slideClassName = `
   transition-opacity transition-filter duration-[600ms] ease-in-out
@@ -18,6 +17,7 @@ const slideClassName = `
   [&.swiper-slide-active]:opacity-100
   [&.swiper-slide-active]:scale-100 /* Убедимся, что активный слайд масштабируется до 100%, если coverflow его уменьшает */
 `;
+
 
 const testimonials = [
   {
@@ -46,12 +46,39 @@ const testimonials = [
   }
 ];
 
+// ЗАМЕНИТЕ НА ВАШИ РЕАЛЬНЫЕ URL АДРЕСА Wistia ВИДЕО!
+// Они должны быть в формате 'https://fast.wistia.com/embed/medias/YOUR_HASH'
+const WISTIA_VIDEO_URLS = [
+  'https://fast.wistia.com/embed/medias/YOUR_VIDEO_HASH_1', // Пример: 'https://fast.wistia.com/embed/medias/abc123def4'
+  'https://fast.wistia.com/embed/medias/YOUR_VIDEO_HASH_2',
+  'https://fast.wistia.com/embed/medias/YOUR_VIDEO_HASH_3',
+];
+
 export default function SocialProof() {
   const swiperRef = useRef<SwiperClass | null>(null);
+  // Массив для хранения ссылок на каждый WistiaPlayer компонент
+  const wistiaPlayerRefs = useRef<(any | null)[]>([]);
+  // Состояние для отслеживания текущего активного слайда (для пропса playing)
+  const [activeSlideIndex, setActiveSlideIndex] = useState(1); // Совпадает с initialSlide
+
+  // Обработчик для клика по слайду (чтобы перейти к нему)
   const handleSlideClick = (index: number) => {
     if (swiperRef.current && swiperRef.current.slideTo) {
       swiperRef.current.slideTo(index);
     }
+  };
+
+  // НОВАЯ ФУНКЦИЯ: Остановить все видео, кроме активного
+  const stopAllOtherVideos = (newActiveIndex: number) => {
+    wistiaPlayerRefs.current.forEach((playerRef, index) => {
+      // Если это не активный слайд и плеер существует
+      if (playerRef && index !== newActiveIndex) {
+        // Вызываем метод pause, который мы "экспортировали" через useImperativeHandle
+        if (typeof playerRef.pause === 'function') {
+          playerRef.pause(); // Остановить и сбросить видео
+        }
+      }
+    });
   };
 
   return (
@@ -78,7 +105,7 @@ export default function SocialProof() {
               spaceBetween={30}
               centeredSlides={true}
               freeMode={true}
-              initialSlide={1}
+              initialSlide={activeSlideIndex} // Используем состояние
               speed={600}
               navigation={{
                 nextEl: '.custom-next',
@@ -106,22 +133,26 @@ export default function SocialProof() {
               onSwiper={(swiper) => {
                 swiperRef.current = swiper;
               }}
+              // НОВЫЙ ОБРАБОТЧИК СОБЫТИЯ СМЕНЫ СЛАЙДА
+              onSlideChange={(swiper) => {
+                // Обновляем состояние активного слайда
+                setActiveSlideIndex(swiper.activeIndex);
+                // Останавливаем все остальные видео
+                stopAllOtherVideos(swiper.activeIndex);
+              }}
             >
-              <SwiperSlide onClick={() => handleSlideClick(0)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed1 /> 
-                </div>
-              </SwiperSlide>
-              <SwiperSlide onClick={() => handleSlideClick(1)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed2 /> 
-                </div>
-              </SwiperSlide>
-              <SwiperSlide onClick={() => handleSlideClick(2)}>
-                <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
-                  <WistiaEmbed3 /> 
-                </div>
-              </SwiperSlide>
+              {WISTIA_VIDEO_URLS.map((videoUrl, index) => (
+                <SwiperSlide key={index} onClick={() => handleSlideClick(index)}>
+                  <div className="m-auto w-[50%] h-[50%] md:w-full md:h-full">
+                    <WistiaPlayer 
+                      ref={(el) => (wistiaPlayerRefs.current[index] = el)}
+                      videoSrc={videoUrl}
+                      // Управляем пропсом playing: видео играет только если это активный слайд
+                      isPlaying={index === activeSlideIndex} 
+                    /> 
+                  </div>
+                </SwiperSlide>
+              ))}
             </Swiper>
 
             <div className="custom-prev absolute top-1/2 left-4 z-10 flex items-center justify-center w-10 h-10 bg-white text-gray-800 rounded-full shadow-md transform -translate-y-1/2 hover:bg-gray-100 transition duration-300">
@@ -136,8 +167,6 @@ export default function SocialProof() {
                 </svg>
             </div>
           </div>
-
-          
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-20">
                     {testimonials.map((item, index) => (

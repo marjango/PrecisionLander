@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { WistiaPlayer } from "@/components/ui/WistiaPlayer";
 import { WistiaEmbed1 } from "@/components/ui/wistia-embed-1";
 import { WistiaEmbed2 } from "@/components/ui/wistia-embed-2";
 import { WistiaEmbed3 } from "@/components/ui/wistia-embed-3";
@@ -18,6 +19,7 @@ const slideClassName = `
   [&.swiper-slide-active]:opacity-100
   [&.swiper-slide-active]:scale-100 /* Убедимся, что активный слайд масштабируется до 100%, если coverflow его уменьшает */
 `;
+
 
 const testimonials = [
   {
